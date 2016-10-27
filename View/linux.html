@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="../Public/css/bootstrap.min.css" rel="stylesheet">
+    <title>杰炜的博客</title>
+</head>
+<body>
+<button type="button" class="btn btn-primary">Pare</button>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">首页</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <!-- <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </nav>
+    <!-- 主体内容 -->
+    <div class="container">
+      <div class="starter-template">
+        <h1>Linux 的基本命令</h1>
+        <pre>
+            1、切换所在目录
+                cd
+            2、显示当前所在目录
+                pwd
+            3、建立目录
+                mkdir
+            4、查看目录
+                ls
+            5、删除目录
+                rmdir
+            6、显示指定目录下所有内容的目录树
+                tree
+            7、创建空文件
+                touch  文件名
+            8、删除文件或目录
+                rm  -rf  文件名
+            9、查看文件内容，从头到尾
+                cat  文件名
+            10、分屏显示文件内容
+                more  文件名
+            11、显示文件头
+                head  -n  行数   文件名
+            12、显示文件尾
+                tail  文件名
+            13、链接文件
+                ln  -s  源文件  目标文件
+            14、复制文件或目录
+                cp  源文件  目标位置
+            15、剪切文件或目录
+                mv  源文件  目标位置
+            16、修改权限
+                chmod
+            17、属主和属组命令
+                chown
+            18、查看命令的帮助
+                man  命令名
+            19、查看命令的常见选项
+                命令  --help
+            20、查找命令的命令，同时看到帮助文档位置
+                whereis  命令名
+            21、按照文件名查找
+                find  查找位置   -name  文件名
+            22、查找符合条件的字串行
+                grep “字符串”  文件名
+            23、管道符，命令1的执行结果，作为命令2的执行条件
+                命令1  |  命令2
+            24、压缩
+                tar  -zcvf  压缩文件名  源文件
+            25、解压缩
+                tar  -zxvf  压缩文件名   解压缩同时解打包
+            26、两种重启方式
+                1、shutdown  -r  now
+                2、reboot
+            27、光盘挂载
+                mkdir /mnt/cdrom
+                mount /dev/cdrom /mnt/cdrom
+            28、光盘卸载
+                umount  /mnt/cdrom
+            29、测试网络连通性
+                ping
+            30、查询本机网络信息
+                ifconfig
+        </pre>
+        <h1>Linux 的基本安装</h1>
+        <p class="lead">划分分区<br>
+        / （根分区）<br>
+        swap分区 （交换分区，内存2倍，不超过2GB）<br>
+        推荐分区
+        /boot （启动分区，200MB）</p>
+        <p class="lead">设置Linux的IP地址<br>
+        [root@localhost ~]# <b>setup</b>&nbsp&nbsp&nbsp&nbsp//通过setup工具设置IP地址<br>
+        <p>第一步<img src="../Public/images/1.jpg" class="img-responsive" alt="Responsive image"></p>
+        <p>第二步<img src="../Public/images/2.jpg" class="img-responsive" alt="Responsive image"></p>
+        <p>第三步<img src="../Public/images/3.jpg" class="img-responsive" alt="Responsive image"></p>
+        <p>第四步<img src="../Public/images/4.jpg" class="img-responsive" alt="Responsive image"></p>
+
+
+        <p class="lead">[root@localhost ~]#
+            <pre>vi /etc/sysconfig/network-scripts/ifcfg-eth0</pre><span style="color:red">把ONBOOT=“no”改为ONBOOT=“yes”</span>
+        </p>
+        <p class="lead">[root@localhost ~]#
+            <pre>service network restart//重启网络服务</pre>
+        </p>
+        <h3>光盘的挂载<h3>
+            <p class="lead">挂载命令：mount /dev/cdrom /mnt/cdrom/<br>
+            新安装会没有文件目录 创建文件：在mnt目录创建：mkdir /mnt/cdrom/<br>
+            使用mount查看文件有没有以下：<br>
+            /dev/sr0 on /mnt/cdrom type iso9660 (ro)
+        </p>
+        <p class="lead">进入CentOS-Media.repo修改成
+            <pre>
+                baseurl=file:///mnt/cdrom/
+                #        file:///media/cdrom/
+                #       file:///media/cdrecorder/
+                gpgcheck=1
+                enabled=1
+            </pre>
+        </p>
+
+        <p class="lead">把CentOS-Base.repo改成CentOS-Base.repo.bak<br>
+         <pre>mv CentOS-Base.repo CentOS-Base.repo.bak</pre>
+        </p>
+         </p>
+      </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./Public/js/jquery-1.8.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./Public/js/bootstrap.min.js"></script>
+</body>
+</html>

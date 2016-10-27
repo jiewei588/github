@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="../Public/css/bootstrap.min.css" rel="stylesheet">
+    <title>杰炜的博客</title>
+</head>
+<style>
+    p{font-size: 20px}
+</style>
+<body>
+<button type="button" class="btn btn-primary">Pare</button>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">首页</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+        </div>
+      </div>
+    </nav>
+    <!-- 主体内容 -->
+  <section class="container-fluid">
+        <div class="container">
+            <div class="col-md-8 mainLeft">
+                <article class="post">
+                    <div class="title-div">
+                    <h1>数据库设计</h1>
+                      <p>管理员信息表</p>
+                      <pre>
+                        <code>
+CREATE TABLE IF NOT EXISTS `admin` (
+      `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+      `aname` varchar(200) CHARACTER SET utf8 NOT NULL,
+      `apwd` varchar(200) NOT NULL,
+      `salt` varchar(100) NOT NULL,
+      `sex` enum('0','1','2') NOT NULL DEFAULT '2',
+      `tel` varchar(30) DEFAULT NULL,
+      `mail` varchar(50) DEFAULT NULL,
+      `title` varchar(355) DEFAULT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=MyISAM  DEFAULT CHARSET=gbk AUTO_INCREMENT=25 ;
+                       </code>
+                      </pre>
+                      <p>
+                         <img class="img-responsive" src="../Public/images/2016-10-27_214523.png">
+                      </p>
+
+                      <p>用户数据表</p>
+                      <pre>
+                        <code>
+CREATE TABLE IF NOT EXISTS `user`(
+    `id` int(11) PRIMARY key auto_increment NOT NULL,
+    `name` varchar(200) NOT NULL,
+    `sex` enum('0','1','2') NOT NULL DEFAULT '2',
+    `age` tinyint(3),NOT NULL,
+    `pwd` char(32),NOT NULL,
+    `level` varchar(10),
+    `credit` tinyint(4),
+    `email` varchar(50),
+    `tel` varchar(20),
+    `QQ` varchar(15),
+    `tate` tinyint(1),
+    `time` varchar(30),NOT NULL
+    )ENGINE=MyISAM  DEFAULT CHARSET=UTF8;
+                       </code>
+                      </pre>
+                      <p>
+                         <img class="img-responsive" src="../Public/images/2016-10-27_220336.png">
+                      </p>
+
+                    <p>商品数据表</p>
+                      <pre>
+                        <code>
+CREATE TABLE IF NOT EXISTS `goods`(
+     `id` int(11) PRIMARY key auto_increment NOT NULL,
+     `goname` varchar(45) NOT NULL,
+     `cid` int(11) NOT NULL,
+     `title` varchar(100),
+     `price` decimal(10,2) NOT NULL,
+     `bargain` decimal(10,2),
+     `is_stock` int NOT NULL,
+     `under` tinyint default 0,
+     `describe` text,
+     `credit` tinyint(4) default 0,
+     `pixel` char(20)
+     )ENGINE=MyISAM  DEFAULT CHARSET=UTF8;
+                       </code>
+                      </pre>
+                      <p>
+                         <img class="img-responsive" src="../Public/images/2016-10-27_221827.png">
+                      </p>
+
+                      <p>商品数据表</p>
+                      <pre>
+                        <code>
+CREATE TABLE IF NOT EXISTS `order_detail`(
+     `id` int(10) PRIMARY key auto_increment NOT NULL,
+     `gid` int NOT NULL,
+     `nid` int NOT NULL,
+     `goods_name` varchar(100),
+     `price` varchar(45) NOT NULL,
+     `goods_num` int not null default 0,
+     `goods_img` varchar(200) NOT NULL,
+     `order_numb` varchar(200) NOT NULL,
+     `consignee` varchar(45) NOT NULL,
+     `address` varchar(255) NOT NULL,
+     `tel` varchar(20) NOT NULL,
+     `totle` int NOT NULL,
+     `time` varchar(255) NOT NULL
+    )ENGINE=MyISAM  DEFAULT CHARSET=UTF8;
+                       </code>
+                      </pre>
+                      <p>
+                         <img class="img-responsive" src="../Public/images/2016-10-27_222843.png">
+                      </p>
+
+                      <p>购物车数据表</p>
+                      <pre>
+                        <code>
+CREATE TABLE IF NOT EXISTS `cart`(
+    `id` int primary key auto_increment NOT NULL,
+    `gid` int(11) NOT NULL,
+    `uid` int(11) NOT NULL,
+    `goods_name` varchar(100),
+    `num` int(11),
+    `img` varchar(100),
+    `price` int(11)
+    )ENGINE=MyISAM  DEFAULT CHARSET=UTF8;
+                       </code>
+                      </pre>
+                      <p>
+                         <img class="img-responsive" src="../Public/images/2016-10-27_223420.png">
+                      </p>
+
+                      <p>收货地址表</p>
+                      <pre>
+                        <code>
+CREATE TABLE IF NOT EXISTS `address`(
+    `id` int(11) auto_increment primary key NOT NULL,
+    `uid` int(11),
+    `consignee` varchar(45) NOT NULL,
+    `province` varchar(45) NOT NULL,
+    `city` varchar(45) NOT NULL,
+    `county` varchar(45) NOT NULL,
+    `detail` varchar(200) NOT NULL,
+    `tel`  varchar(20) NOT NULL
+    )ENGINE=MyISAM  DEFAULT CHARSET=UTF8;
+                       </code>
+                      </pre>
+                      <p>
+                         <img class="img-responsive" src="../Public/images/2016-10-27_223808.png">
+                      </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+  </section>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./Public/js/jquery-1.8.3.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./Public/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <title>杰炜的博客</title>
+    <meta name="description" content="Welcome to my personal blog">
+    <meta name="author" content="zSoodany">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../Public/css/zerogrid.css">
+    <link rel="stylesheet" href="../Public/css/style.css">
+    <link rel="stylesheet" href="../Public/css/responsive.css">
+
+
+    <link href='../Public/images/favicon.ico' rel='icon' type='image/x-icon'/>
+
+</head>
+
+<body>
+<div class="wrap-body zerogrid">
+
+<header>
+    <div class="wrap-header">
+        <!-- ==========导航栏========== -->
+        <div class="top">
+            <div id="search">
+                <div class="button-search"></div>
+                <input type="text" value="Search..." onFocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onBlur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
+            </div>
+        </div>
+
+
+        <div id="logo">
+            <a><h1>WeiXin</h1></a>
+            <p>Welcome to my personal blog</p>
+        </div>
+
+        <nav>
+            <div class="wrap-nav">
+                <div class="menu">
+                    <ul>
+                        <li><a href="../index.html">首页</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</header>
+     <section class="container-fluid">
+    <div class="container">
+        <div class="col-md-8 mainLeft">
+
+            <article class="post">
+                <div class="title-div">
+                    <h2>
+                        <a href="#">微信消息收发流程</a>
+                    </h2>
+
+                </div>
+
+            <div class="post-content">
+                <p>
+                    <pre>
+                    <code>
+                    ★ 1、我们通过微信客户端给微信服务器发送了一条“hello world”的文本消息。
+
+
+                    ★ 2、微信服务器收到我们的消息后，查找该公众账号所配置的服务器信息中的URL。
+
+
+                    ★ 3、微信服务器向第2步的URL发送请求，参数是微信服务器自己拼接过的XML格式。
+
+
+                    ★ 4、微信服务器将XML格式的数据发给我们的服务器，这个时候我们可以进行进行分析和处理。
+                    处理完成后，将文本发送给了用户的微信客户端。我们就在手机上的客户端看到了微信输出的“收到文本”。
+
+
+                    ★ 5、流程结束，这就是发送“hello world”，然后返回给用户“收到文本”的微信消息收发流程。
+                    </code>
+                        </pre>
+                      <pre>
+                    </pre>
+                    </p>
+            </div>
+            </article>
+        </div>
+    </div>
+ </section>

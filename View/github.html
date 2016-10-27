@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>杰炜的博客</title>
+    <meta name="description" content="Welcome to my personal blog">
+    <meta name="author" content="zSoodany">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../Public/css/zerogrid.css">
+    <link rel="stylesheet" href="../Public/css/style.css">
+    <link rel="stylesheet" href="../Public/css/responsive.css">
+    <link href='../Public/images/favicon.ico' rel='icon' type='image/x-icon'/>
+
+    <link href="../Public/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrap-body zerogrid">
+
+<header>
+    <div class="wrap-header">
+        <!-- ==========导航栏========== -->
+        <div id="logo">
+            <a><h1>Git</h1></a>
+            <p>Welcome to my personal blog</p>
+        </div>
+
+        <nav>
+            <div class="wrap-nav">
+                <div class="menu">
+                    <ul>
+                        <li><a href="../index.html">首页</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</header>
+
+<body>
+
+        <!--主体部分-->
+        <section class="container-fluid">
+            <div class="container">
+                <div class="col-md-8 mainLeft">
+                    <article class="post">
+                        <div class="title-div">
+                            <h2>
+                                <b>如何在Github搭建自己的个人博客</b>
+                            </h2>
+                            <div>
+                                作者：曹杰炜 • 2016年9月13日
+                            </div>
+                        </div>
+                        <hr >
+                        <div class="post-content">
+
+                           <b>第一步：在github网站创建你的账号<br >
+                                <pre>网址:http://www.github.com</pre>
+                           </b>
+
+                           <b>第二步：新建一个仓库</b>
+                                <p>点击右上角的 + 号，然后点击New repository</p>
+                                   <img src="../Public/images/2016-09-13_135424.png">
+                                <p>
+                                <br ><br >
+                                <img  class="img-responsive" src="../Public/images/2016-09-13_135456.png">
+                                <h3>点击Create repository按钮就可以新建一个仓库</h3>
+                            </p>
+                            <hr>
+                            <p>
+                                <h3>接下来就是出现这个页面了。</h3>
+                                <img class="img-responsive" src="../Public/images/2016-09-13_135512.png">
+                            </p>
+
+                           <b>
+                             第三步：创建gh-pages分支
+                             </b>
+                                <img class="img-responsive"  src="../Public/images/2016-09-13_135525.png">
+                             </p>
+                             输入正确后，直接回车键保存。到此为止，gh-pages分支就创建完成。并且我们的基于github的个人博客也完成了。
+                           </p>
+                           <p style="color:red">
+                                注：我们只需要往gh-pages分支提交我们的静态代码就可以了。
+                           </p>
+
+                           <p>
+                                以下是将github网站仓库的代码克隆到我们自己的电脑的过程：
+                           </p>
+                           <p>
+                                <span style="color:red">1. 克隆你的项目(如果是Window系统，建议下载Git Bash这个软件，以下命令都是在Git Bash中输入的)
+                                </span>
+                                    <pre>git clone URL</pre>
+
+                                2. 将gh-page远程分支检出
+                                       <pre>git checkout --track origin/gh-pages</pre>
+
+                                3. 写你的代码
+                                <br/>
+                                <br/>
+
+                                4. 添加刚刚写的代码
+                                    <pre>git add .</pre>
+
+                                5. 提交代码到本地仓库
+                                    <pre>git commit -m '提交的时候写些注释'</pre>
+
+                                6. 将第三步写的代码，提交到gh-pages分支
+
+                                    <pre>git push origin gh-pages</pre>
+                           </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+  </body>
+
+
+<footer>
+    <div class="wrap-footer">
+        <div class="row">
+            <!-- 图片链接 -->
+            <div class="col-1-3">
+                <div class="wrap-col">
+                    <div class="box">
+                        <div class="heading"><h2>Image Likes</h2></div>
+                        <div class="content gallery">
+                            <a href="https://github.com/"><img src="../Public/images/git.jpg" width="120"/></a>
+                            <a href="https://www.mysql.com/"><img src="../Public/images/mysql.jpg" width="120"/></a>
+                            <a href="https://www.aliyun.com/"><img src="../Public/images/yun.jpg" width="120"/></a>
+                            <a href="http://php.net/"><img src="../Public/images/php.jpg" width="120"/></a>
+                            <a href="http://jquery.com/"><img src="../Public/images/jquery.jpg" width="120"/></a>
+                            <a href="http://www.w3school.com.cn/"><img src="../Public/images/w3c.jpg" width="120"/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-1-3">
+                <div class="wrap-col">
+                    <div class="box">
+                        <div class="heading"><h2>About Us</h2></div>
+                        <div class="content">
+                            <a href="#" target="_blank"><img src="../Public/images/zerotheme.jpg" style="border: 0px;"/></a>
+                            <p><a href="#" target="_blank">Free Html5 Templates</a> created by <a href="#">Zerotheme</a>. You can use and modify the template for both personal and commercial use. You must keep all copyright information and credit links in the template and associated files.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 联系方式 -->
+            <div class="col-1-3">
+                <div class="wrap-col">
+                    <div class="box">
+                        <div class="heading"><h2>Contact Me</h2></div>
+                        <div class="content">
+                            <p>Hello! I can contact me according to the following contact</p>
+                            <p>Email : <a target="_blank">jiewei5466@163.com</a></p>
+                            <p>Phone :  1862021****</p>
+                            <p> QQ   : 592196381</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © 2016 - Collect from  @个人博客<a target="_blank"></a></p>
+    </div>
+</footer>
+
+</div>
+</body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../Public/js/jquery-1.8.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../Public/js/bootstrap.min.js"></script>
+</html>
